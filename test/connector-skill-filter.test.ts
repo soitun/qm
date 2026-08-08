@@ -24,7 +24,14 @@ function skill(name: string): SkillResolution {
 }
 
 test("provider skills are visible only for connectors configured by the admin", () => {
-  const all = [skill("memory"), skill("google-workspace"), skill("dropbox"), skill("linear"), skill("x"), skill("slack-drafts")];
+  const all = [
+    skill("memory"),
+    skill("google-workspace"),
+    skill("dropbox"),
+    skill("linear"),
+    skill("x"),
+    skill("slack-drafts"),
+  ];
   assert.deepEqual(
     filterConnectorSkills(all, []).map((entry) => entry.skill?.manifest.name),
     ["memory"],
